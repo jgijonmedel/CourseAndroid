@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_medium"
+    tools:context=".MainActivity" >
+
+   <!-- inputs text  -->
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_subtitle"
+        android:hint="@string/text_hint_name" />
+
+    <EditText
+        android:id="@+id/et_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_subtitle"
+        android:hint="@string/text_hint_last_name"
+        android:layout_marginTop="@dimen/spacing_medium"/>
+
+    <!-- text result -->
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_result_placeholder"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_title"
+        android:padding="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_long"/>
+
+    <!-- button -->
+    <Button
+        android:id="@+id/btn_show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_button"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_body"
+        android:padding="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_long"/>
+
+</LinearLayout>

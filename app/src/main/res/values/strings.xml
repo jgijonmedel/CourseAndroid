@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CourseAndroid</string>
+    <string name="hint_text">Escribe tu nombre</string>
+    <string name="text_button">Presioname</string>
+    <string name="text_result_placeholder">resultado</string>
+    <string name="text_hint_name">Escribe tu nombre</string>
+    <string name="text_hint_last_name">Escribe tu apellido</string>
+    <string name="text_title_second_activity">Segunda pantalla</string>
+    <string name="label_button_2">Boton2</string>
+    <string name="label_button_1">Boton 1</string>
+</resources>
