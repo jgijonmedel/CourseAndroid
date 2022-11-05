@@ -9,7 +9,22 @@
         android:id="@+id/firstFragment"
         android:name="com.jimmy.courseandroid.fragments.FirstFragment"
         android:label="@string/first_fragment"
-        tools:layout="@layout/fragment_first"/>
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment">
+            <argument
+                android:name="fullName"
+                app:argType="string"
+                android:defaultValue=" "/>
+        </action>
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.jimmy.courseandroid.fragments.SecondFragment"
+        android:label="@string/second_fragment"
+        tools:layout="@layout/fragment_second"/>
 
 </navigation>

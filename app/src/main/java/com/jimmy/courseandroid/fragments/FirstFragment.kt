@@ -7,18 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import com.jimmy.courseandroid.R
 import com.jimmy.courseandroid.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
+    private var fullName = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnShowResult.setOnClickListener {
             val nameString = binding.etName.text.toString()
             val lastNameString = binding.etLastName.text.toString()
-            val fullName =  getFullName(name = nameString, lastName = lastNameString)
+            fullName =  getFullName(name = nameString, lastName = lastNameString)
             binding.tvResult.text = fullName
             Toast.makeText(requireContext(), fullName, Toast.LENGTH_SHORT).show()
         }
@@ -26,7 +30,8 @@ class FirstFragment : Fragment() {
             AlertDialog.Builder(requireContext())
                 .setMessage("¿Seguro quieres navegar a la siguiente pantalla?")
                 .setPositiveButton("Si") { dialog, _ ->
-                    Toast.makeText(requireContext(), "de momento no hay mas pantallas :(", Toast.LENGTH_SHORT).show()
+                    val bundle = bundleOf("fullName" to fullName)
+                   findNavController().navigate(R.id.action_firstFragment_to_secondFragment, bundle)
                     dialog.dismiss()
                 }.setNegativeButton("No") { dialog, _ ->
                     dialog.dismiss()
