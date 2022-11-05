@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.jimmy.courseandroid.fragments.FirstFragment"
+        android:label="@string/first_fragment"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment">
+            <argument
+                android:name="fullName"
+                app:argType="string"
+                android:defaultValue=" "/>
+        </action>
+        <action
+            android:id="@+id/action_firstFragment_to_charactersDbzFragment"
+            app:destination="@id/charactersDbzFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.jimmy.courseandroid.fragments.SecondFragment"
+        android:label="@string/second_fragment"
+        tools:layout="@layout/fragment_second"/>
+
+    <fragment
+        android:id="@+id/charactersDbzFragment"
+        android:name="com.jimmy.courseandroid.charactersDbz.characters.CharactersDbzFragment"
+        android:label="fragment_characters_dbz"
+        tools:layout="@layout/fragment_characters_dbz" />
+
+</navigation>

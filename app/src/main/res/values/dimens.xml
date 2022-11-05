@@ -11,4 +11,7 @@
     <dimen name="text_body">14sp</dimen>
     <dimen name="text_subtitle">20sp</dimen>
 
+    <!--Image size-->
+    <dimen name="character_dbz_image_size">150dp</dimen>
+
 </resources>
