@@ -18,7 +18,9 @@
                 app:argType="string"
                 android:defaultValue=" "/>
         </action>
-
+        <action
+            android:id="@+id/action_firstFragment_to_charactersDbzFragment"
+            app:destination="@id/charactersDbzFragment" />
     </fragment>
 
     <fragment
@@ -26,5 +28,11 @@
         android:name="com.jimmy.courseandroid.fragments.SecondFragment"
         android:label="@string/second_fragment"
         tools:layout="@layout/fragment_second"/>
+
+    <fragment
+        android:id="@+id/charactersDbzFragment"
+        android:name="com.jimmy.courseandroid.charactersDbz.characters.CharactersDbzFragment"
+        android:label="fragment_characters_dbz"
+        tools:layout="@layout/fragment_characters_dbz" />
 
 </navigation>

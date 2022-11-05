@@ -2,4 +2,5 @@
 <resources>
     <string name="first_fragment">first fragment</string>
     <string name="second_fragment">second fragment</string>
+    <string name="character_dbz_title">Personajes de Dragon Ball Z</string>
 </resources>

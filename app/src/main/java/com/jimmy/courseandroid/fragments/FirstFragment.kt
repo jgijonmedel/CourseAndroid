@@ -37,8 +37,11 @@ class FirstFragment : Fragment() {
                     dialog.dismiss()
                 }.create().show()
         }
-    }
 
+        binding.btnGoToDbz.setOnClickListener {
+            findNavController().navigate(R.id.action_firstFragment_to_charactersDbzFragment)
+        }
+    }
 
     private fun getFullName(
         name: String,
