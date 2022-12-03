@@ -9,11 +9,16 @@ import com.jimmy.courseandroid.databinding.ItemCharacterDbzBinding
 
 class CharacterDbzAdapter : RecyclerView.Adapter<CharacterDbzViewHolder>() {
 
-    private var characterList: List< CharacterDbz> = emptyList()
+    private var characterList: MutableList< CharacterDbz> = mutableListOf()
 
-    fun setList(characters: List<CharacterDbz>) {
-        characterList = characters
-        notifyDataSetChanged()
+    //fun setList(characters: List<CharacterDbz>) {
+    //    characterList = characters
+    //    notifyDataSetChanged()
+    //}
+
+    fun addCharacter(characterDbz: CharacterDbz) {
+        characterList.add(characterDbz)
+        notifyItemInserted(characterList.size)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterDbzViewHolder {
