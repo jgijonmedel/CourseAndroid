@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jimmy.courseandroid.R
 import com.jimmy.courseandroid.charactersDbz.characters.adapter.CharacterDbzAdapter
-import com.jimmy.courseandroid.charactersDbz.data.providerCharacter
+import com.jimmy.courseandroid.charactersDbz.createCharacterDialog.CreateCharacterDbzDialog
 import com.jimmy.courseandroid.databinding.FragmentCharactersDbzBinding
 import com.jimmy.courseandroid.fragments.LoginFragment.Companion.EMAIL_PREFERENCE
 
@@ -19,6 +19,19 @@ class CharactersDbzFragment : Fragment() {
 
     private var _binding: FragmentCharactersDbzBinding? = null
     private val binding get() = _binding!!
+    val adapter = CharacterDbzAdapter()
+
+    private fun showDialog() {
+        val dialog = CreateCharacterDbzDialog()
+        dialog.showDialog(
+            onCancel = { it.dismiss() },
+            onSaved = { d, character ->
+                adapter.addCharacter(character)
+                d.dismiss()
+            },
+            fragmentManager = parentFragmentManager
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,14 +51,14 @@ class CharactersDbzFragment : Fragment() {
             findNavController().navigate(R.id.action_charactersDbzFragment_to_loginFragment)
         }
         setUpRecycler()
+        binding.btnAdd.setOnClickListener { showDialog() }
     }
 
     private fun setUpRecycler() {
-        val adapter = CharacterDbzAdapter()
         val layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.rvCharactersDbz.adapter = adapter
         binding.rvCharactersDbz.layoutManager = layoutManager
-        adapter.setList(providerCharacter)
+        //adapter.setList(providerCharacter)
     }
 
     companion object {

@@ -11,4 +11,11 @@
     <string name="button_go_to_dbz">Ver lista de personajes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="dbz_text_hint_name">Nombre del personaje</string>
+    <string name="dbz_text_hint_race">Raza del personaje</string>
+    <string name="dbz_text_power_level">Escribe el nivel de su poder</string>
+    <string name="dbz_label_btn_save">Guardar</string>
+    <string name="dbz_label_btn_cancel">Cancel</string>
+    <string name="dbz_dialog_title">Crea tu personaje</string>
 </resources>
