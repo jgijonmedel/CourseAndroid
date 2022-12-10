@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.jimmy.courseandroid.R
 import com.jimmy.courseandroid.databinding.FragmentLoginLayoutBinding
+import com.jimmy.courseandroid.utils.DialogSimpleAlert
+import com.jimmy.courseandroid.utils.User
+import com.jimmy.courseandroid.utils.UserManager
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginLayoutBinding? = null
@@ -32,8 +35,17 @@ class LoginFragment : Fragment() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
             if (email.isNotBlank() && password.isNotBlank()) {
-                sharedPreferences.edit().putString(EMAIL_PREFERENCE, email).apply()
+                //sharedPreferences.edit().putString(EMAIL_PREFERENCE, email).apply()
+                UserManager.setUser(User(email, password))
                 findNavController().navigate(R.id.action_loginFragment_to_charactersDbzFragment)
+                /*DialogSimpleAlert.Builder()
+                    .title("Alerta")
+                    .message("Estas a punto de iniciar sesion")
+                    .primaryButton("Aceptar")
+                    .secondaryButton("Cancelar")
+                    .showSecondaryButton(false)
+                    .createDialog()
+                    .show(childFragmentManager, "DialogSimpleAlert")*/
             }
         }
     }
