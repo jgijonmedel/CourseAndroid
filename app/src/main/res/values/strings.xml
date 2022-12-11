@@ -18,4 +18,5 @@
     <string name="dbz_label_btn_save">Guardar</string>
     <string name="dbz_label_btn_cancel">Cancel</string>
     <string name="dbz_dialog_title">Crea tu personaje</string>
+    <string name="dbz_text_hint_url_image">Escribe la url de la imagen</string>
 </resources>

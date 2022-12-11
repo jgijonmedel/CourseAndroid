@@ -1,4 +1,4 @@
-package com.jimmy.courseandroid.fragments
+package com.jimmy.courseandroid.ui.fragments
 
 import android.content.Context
 import android.os.Bundle

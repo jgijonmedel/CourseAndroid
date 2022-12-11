@@ -26,17 +26,27 @@
             tools:src="@drawable/ic_launcher_background"
             android:contentDescription="character image" />
 
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="@dimen/spacing_medium"
+            android:layout_height="@dimen/spacing_medium"
+            android:layout_margin="@dimen/spacing_small"
+            android:src="@android:drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_small"
             android:textColor="@color/black"
             android:textSize="@dimen/text_body"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_race"
+            app:layout_constraintEnd_toStartOf="@+id/btn_delete"
             app:layout_constraintStart_toEndOf="@+id/iv_image"
             app:layout_constraintTop_toTopOf="@+id/iv_image"
-            app:layout_constraintBottom_toTopOf="@+id/tv_race"
             tools:text="Nombre del personaje" />
 
         <TextView

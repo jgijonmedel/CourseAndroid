@@ -37,6 +37,14 @@
             android:textSize="@dimen/text_subtitle" />
 
         <EditText
+            android:id="@+id/et_url_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:hint="@string/dbz_text_hint_url_image"
+            android:textSize="@dimen/text_subtitle" />
+
+        <EditText
             android:id="@+id/et_power_level"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

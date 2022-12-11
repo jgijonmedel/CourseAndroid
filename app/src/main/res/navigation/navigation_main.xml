@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.jimmy.courseandroid.fragments.FirstFragment"
+        android:name="com.jimmy.courseandroid.ui.fragments.FirstFragment"
         android:label="@string/first_fragment"
         tools:layout="@layout/fragment_first">
         <action
@@ -24,13 +24,13 @@
 
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.jimmy.courseandroid.fragments.SecondFragment"
+        android:name="com.jimmy.courseandroid.ui.fragments.SecondFragment"
         android:label="@string/second_fragment"
         tools:layout="@layout/fragment_second"/>
 
     <fragment
         android:id="@+id/charactersDbzFragment"
-        android:name="com.jimmy.courseandroid.charactersDbz.characters.CharactersDbzFragment"
+        android:name="com.jimmy.courseandroid.ui.charactersDbz.characters.CharactersDbzFragment"
         android:label="fragment_characters_dbz"
         tools:layout="@layout/fragment_characters_dbz" >
         <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.jimmy.courseandroid.fragments.LoginFragment"
+        android:name="com.jimmy.courseandroid.ui.fragments.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/fragment_login_layout">
         <action

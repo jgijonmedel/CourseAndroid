@@ -1,5 +1,6 @@
-package com.jimmy.courseandroid.charactersDbz.data
+package com.jimmy.courseandroid.ui.charactersDbz.data
 
+/*
 val providerCharacter = listOf(
     CharacterDbz(
         name = "Son Goku",
@@ -99,3 +100,5 @@ val providerCharacter = listOf(
     ),
 
 )
+
+ */

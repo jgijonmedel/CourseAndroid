@@ -1,4 +1,4 @@
-package com.jimmy.courseandroid.charactersDbz.createCharacterDialog
+package com.jimmy.courseandroid.ui.charactersDbz.createCharacterDialog
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -10,14 +10,15 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
-import com.jimmy.courseandroid.charactersDbz.data.CharacterDbz
+import com.jimmy.courseandroid.data.entity.CharacterDbzEntity
 import com.jimmy.courseandroid.databinding.DialogCreateCharacterDbzBinding
+import java.util.UUID
 
 class CreateCharacterDbzDialog : DialogFragment() {
 
     private lateinit var binding: DialogCreateCharacterDbzBinding
     private var onCancel: (DialogFragment) -> Unit = {}
-    private var onSaved: (DialogFragment, CharacterDbz) -> Unit = { _, _ -> }
+    private var onSaved: (DialogFragment, CharacterDbzEntity) -> Unit = { _, _ -> }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,9 +42,10 @@ class CreateCharacterDbzDialog : DialogFragment() {
 
         binding.btnSave.setOnClickListener {
             if (validateInputs()) {
-                val character = CharacterDbz(
+                val character = CharacterDbzEntity(
+                    id = UUID.randomUUID().toString(),
                     name = binding.etName.text.toString().trim(),
-                    image = "https://firebasestorage.googleapis.com/v0/b/janus-course-android.appspot.com/o/characters_dbz%2Fgoku.jpg?alt=media",
+                    image = binding.etUrlImage.text.toString().trim(),
                     race = binding.etRace.text.toString().trim(),
                     basePower = binding.etPowerLevel.text.toString().toIntOrNull() ?: 0
                 )
@@ -56,7 +58,7 @@ class CreateCharacterDbzDialog : DialogFragment() {
 
     fun showDialog(
         onCancel: (dialog: DialogFragment) -> Unit,
-        onSaved: (dialog: DialogFragment, character: CharacterDbz) -> Unit,
+        onSaved: (dialog: DialogFragment, character: CharacterDbzEntity) -> Unit,
         fragmentManager: FragmentManager
     ) {
         this.onCancel = onCancel
@@ -68,6 +70,7 @@ class CreateCharacterDbzDialog : DialogFragment() {
         val nameIsNotEmpty = binding.etName.text.trim().isNotEmpty()
         val raceIsNotEmpty = binding.etRace.text.trim().isNotEmpty()
         val levelIsNotEmpty = binding.etPowerLevel.text.trim().isNotEmpty()
-        return (nameIsNotEmpty || raceIsNotEmpty || levelIsNotEmpty)
+        val urlImageIsNotEmpty = binding.etUrlImage.text.trim().isNotEmpty()
+        return (nameIsNotEmpty || raceIsNotEmpty || levelIsNotEmpty || urlImageIsNotEmpty)
     }
 }

@@ -1,4 +1,4 @@
-package com.jimmy.courseandroid
+package com.jimmy.courseandroid.ui
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
+import com.jimmy.courseandroid.R
 import com.jimmy.courseandroid.databinding.ActivityMainBinding
-import com.jimmy.courseandroid.fragments.LoginFragment.Companion.IS_AUTH_PREFERENCE
+import com.jimmy.courseandroid.ui.fragments.LoginFragment.Companion.IS_AUTH_PREFERENCE
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.jimmy.courseandroid
+package com.jimmy.courseandroid.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

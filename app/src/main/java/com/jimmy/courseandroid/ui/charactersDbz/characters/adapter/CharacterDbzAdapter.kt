@@ -1,24 +1,21 @@
-package com.jimmy.courseandroid.charactersDbz.characters.adapter
+package com.jimmy.courseandroid.ui.charactersDbz.characters.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jimmy.courseandroid.R
-import com.jimmy.courseandroid.charactersDbz.data.CharacterDbz
+import com.jimmy.courseandroid.data.entity.CharacterDbzEntity
 import com.jimmy.courseandroid.databinding.ItemCharacterDbzBinding
 
-class CharacterDbzAdapter : RecyclerView.Adapter<CharacterDbzViewHolder>() {
+class CharacterDbzAdapter(
+    private val onDeleted: (CharacterDbzEntity)->Unit
+) : RecyclerView.Adapter<CharacterDbzViewHolder>() {
 
-    private var characterList: MutableList< CharacterDbz> = mutableListOf()
+    private var characterList: List<CharacterDbzEntity> = emptyList()
 
-    //fun setList(characters: List<CharacterDbz>) {
-    //    characterList = characters
-    //    notifyDataSetChanged()
-    //}
-
-    fun addCharacter(characterDbz: CharacterDbz) {
-        characterList.add(characterDbz)
-        notifyItemInserted(characterList.size)
+    fun setList(characters: List<CharacterDbzEntity>) {
+        characterList = characters
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterDbzViewHolder {
@@ -30,7 +27,7 @@ class CharacterDbzAdapter : RecyclerView.Adapter<CharacterDbzViewHolder>() {
 
     override fun onBindViewHolder(holder: CharacterDbzViewHolder, position: Int) {
         val character = characterList[position]
-        holder.render(character)
+        holder.render(character, onDeleted)
     }
 
     override fun getItemCount(): Int {
