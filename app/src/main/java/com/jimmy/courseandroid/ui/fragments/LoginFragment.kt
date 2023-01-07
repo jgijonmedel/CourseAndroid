@@ -33,7 +33,7 @@ class LoginFragment : Fragment() {
             val password = binding.etPassword.text.toString()
             if (email.isNotBlank() && password.isNotBlank()) {
                 sharedPreferences.edit().putString(EMAIL_PREFERENCE, email).apply()
-                findNavController().navigate(R.id.action_loginFragment_to_charactersDbzFragment)
+                findNavController().navigate(R.id.action_loginFragment_to_formFragment)
             }
         }
     }

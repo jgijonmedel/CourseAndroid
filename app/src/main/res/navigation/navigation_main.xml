@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_main">
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/formFragment">
 
     <fragment
         android:id="@+id/firstFragment"
@@ -48,6 +49,16 @@
         <action
             android:id="@+id/action_loginFragment_to_charactersDbzFragment"
             app:destination="@id/charactersDbzFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_formFragment"
+            app:destination="@id/formFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.jimmy.courseandroid.ui.fragments.FormFragment"
+        android:label="fragment_form"
+        tools:layout="@layout/fragment_form" />
+
 
 </navigation>
